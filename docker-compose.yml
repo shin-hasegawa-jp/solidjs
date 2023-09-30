@@ -1,0 +1,14 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: frontend_image
+    container_name: frontend
+    tty: true
+    volumes:
+      - ./frontend/app:/app
+      - /app/node_modules
+    ports:
+      - 3003:3000
+    
