@@ -1,5 +1,9 @@
 import logo from './logo.svg';
 import styles from './App.module.css';
+import { createSignal } from 'solid-js';
+
+const [state, setState] = createSignal(0);
+const newCount = () => setState(state() + 1);
 
 function App() {
   return (
@@ -17,6 +21,8 @@ function App() {
         >
           Learn Solid
         </a>
+        <p>{state}</p>
+        <button onClick={newCount}>Click me</button>
       </header>
     </div>
   );
